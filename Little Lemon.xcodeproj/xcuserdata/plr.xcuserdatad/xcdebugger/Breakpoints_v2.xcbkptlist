@@ -3,4 +3,70 @@
    uuid = "FDF7144D-4241-4109-B281-68535CF17F94"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "86F1CFD0-245C-4154-AF07-E0047B012BA9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Little Lemon/Menu.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "getMenuData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "86F1CFD0-245C-4154-AF07-E0047B012BA9 - 947e00daaaf8bf1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Little_Lemon.Menu.getMenuData() -&gt; ()"
+                  moduleName = "Little Lemon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/plr/Documents/Meta%20iOS%20Developer/iOS%20Capstone/Little%20Lemon/little-lemon-ios/Little%20Lemon/Menu.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "1816">
+               </Location>
+               <Location
+                  uuid = "86F1CFD0-245C-4154-AF07-E0047B012BA9 - 947e00daaaf8bbf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Little_Lemon.Menu.getMenuData() -&gt; ()"
+                  moduleName = "Little Lemon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/plr/Documents/Meta%20iOS%20Developer/iOS%20Capstone/Little%20Lemon/little-lemon-ios/Little%20Lemon/Menu.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "1988">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ABEDB164-4137-44BA-B1A3-00DA503F309F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Little Lemon/Persistence.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "clear()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
