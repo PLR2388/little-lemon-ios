@@ -61,8 +61,6 @@
 		2A33E29E2B03F56300F75A75 = {
 			isa = PBXGroup;
 			children = (
-				2AD1CBC62B12622700077AE1 /* PrimaryButtonView.swift */,
-				2AD1CBC02B123D6500077AE1 /* HeroSection.swift */,
 				2A33E2A92B03F56300F75A75 /* Little Lemon */,
 				2A33E2A82B03F56300F75A75 /* Products */,
 			);
@@ -79,6 +77,8 @@
 		2A33E2A92B03F56300F75A75 /* Little Lemon */ = {
 			isa = PBXGroup;
 			children = (
+				2AD1CBC62B12622700077AE1 /* PrimaryButtonView.swift */,
+				2AD1CBC02B123D6500077AE1 /* HeroSection.swift */,
 				2A979C012B08EFA600D0D58E /* FetchedObjects.swift */,
 				2A979C002B08EFA600D0D58E /* Persistence.swift */,
 				2A3B5CF82B087CAA00661268 /* UserProfile.swift */,
