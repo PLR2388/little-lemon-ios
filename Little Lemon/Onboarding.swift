@@ -32,23 +32,15 @@ struct Onboarding: View {
                 OutlinedTextField(label: "Last Name *", input: $lastName)
                 OutlinedTextField(label: "Email *", input: $email)
                     .padding(.bottom)
-                Button {
+                
+                PrimaryButtonView("Register") {
                     if !firstName.isEmpty && !lastName.isEmpty && !email.isEmpty {
                         UserDefaults.standard.set(firstName, forKey: kFirstName)
                         UserDefaults.standard.set(lastName, forKey: kLastName)
                         UserDefaults.standard.set(email, forKey: kEmail)
                         UserDefaults.standard.set(true, forKey: kIsLoggedIn)
                         isLoggedIn = true
-                    } else {
-                        
                     }
-                } label: {
-                    Text("Register")
-                        .foregroundStyle(blackLL)
-                        .frame(width: 150, height: 50)
-                        .background(.yellowLL)
-                        .clipShape(RoundedRectangle(cornerRadius: 25.0))
-                        
                 }
                 Spacer()
             }

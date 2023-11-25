@@ -16,31 +16,40 @@ struct UserProfile: View {
     
     var body: some View {
         VStack {
-            TopBar(isConnected: true)
+            TopBar(isConnected: false)
             VStack(alignment: .leading) {
                 Text("Personal information")
                 Image("profile")
                     .resizable()
                     .frame(width: 50, height: 50)
-                ZStack {
-                    Text(firstName ?? "")
-                }
-                .frame(maxWidth: .infinity)
-                .frame(height: 50)
-                .border(Color.black)
+     
                 
-        
-                    
-                Text(lastName ?? "")
-                Text(email ?? "")
-                Button("Logout") {
+                detailField(label: "Fist name", value: firstName ?? "")
+                detailField(label: "Last name", value: lastName ?? "")
+                detailField(label: "Email", value: email ?? "")
+                
+                PrimaryButtonView("Logout") {
                     UserDefaults.standard.set(false, forKey: kIsLoggedIn)
                     self.presentation.wrappedValue.dismiss()
                 }
+                .frame(maxWidth: .infinity, alignment: .center)
                 Spacer()
             }
             .padding()
         }
+    }
+    
+    @ViewBuilder
+    private func detailField(label: String, value: String) -> some View {
+        Text(label)
+            .font(.caption)
+            .foregroundStyle(.secondary)
+        ZStack {
+            Text(value)
+        }
+        .frame(maxWidth: .infinity)
+        .frame(height: 50)
+        .border(Color.black)
     }
 }
 

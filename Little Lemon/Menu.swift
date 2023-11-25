@@ -27,6 +27,7 @@ struct Menu: View {
                                 displaySearchBar.toggle()
                             }
                         }
+                        .padding()
 
                     if displaySearchBar {
                         TextField("Seach Menu", text: $searchText)
@@ -34,7 +35,6 @@ struct Menu: View {
                             .frame(height: 30)
                             .background(grayLL)
                             .clipShape(RoundedRectangle(cornerRadius: 10))
-                            .padding()
                     }
                 }
             }
