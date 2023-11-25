@@ -14,13 +14,13 @@
             filePath = "Little Lemon/Menu.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "getMenuData()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "86F1CFD0-245C-4154-AF07-E0047B012BA9 - 947e00daaaf8bf1"
+                  uuid = "86F1CFD0-245C-4154-AF07-E0047B012BA9 - 947e00daaaf8eb4"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -30,12 +30,12 @@
                   urlString = "file:///Users/plr/Documents/Meta%20iOS%20Developer/iOS%20Capstone/Little%20Lemon/little-lemon-ios/Little%20Lemon/Menu.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88"
-                  offsetFromSymbolStart = "1816">
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "388">
                </Location>
                <Location
-                  uuid = "86F1CFD0-245C-4154-AF07-E0047B012BA9 - 947e00daaaf8bbf"
+                  uuid = "86F1CFD0-245C-4154-AF07-E0047B012BA9 - 947e00daaaf8eb4"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -45,8 +45,8 @@
                   urlString = "file:///Users/plr/Documents/Meta%20iOS%20Developer/iOS%20Capstone/Little%20Lemon/little-lemon-ios/Little%20Lemon/Menu.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "86"
-                  endingLineNumber = "86"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
                   offsetFromSymbolStart = "1988">
                </Location>
             </Locations>

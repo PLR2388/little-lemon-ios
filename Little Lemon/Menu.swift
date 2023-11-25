@@ -10,15 +10,38 @@ import SwiftUI
 struct Menu: View {
     @Environment(\.managedObjectContext) private var viewContext
     @State private var searchText = ""
+    @State private var displaySearchBar = false
     
     var body: some View {
         VStack {
-            Text("Little Lemon")
-            Text("Chicago")
-            Text("Description")
-            TextField("Seach Menu", text: $searchText)
+            TopBar(isConnected: true)
+            VStack(alignment: .leading) {
+                HeroSection()
+                HStack {
+                    Image(systemName: "magnifyingglass.circle.fill")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .foregroundStyle(grayLL)
+                        .onTapGesture {
+                            withAnimation {
+                                displaySearchBar.toggle()
+                            }
+                        }
+
+                    if displaySearchBar {
+                        TextField("Seach Menu", text: $searchText)
+                            .foregroundStyle(blackLL)
+                            .frame(height: 30)
+                            .background(grayLL)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .padding()
+                    }
+                }
+            }
+            .background(greenLL)
+   
             FetchedObjects(predicate: buildPredicate(), sortDescriptors: buildSortDescriptors()) { (dishes: [Dish]) in
-                List {
+                ScrollView {
                     ForEach(dishes) { dish in
                         NavigationLink {
                             VStack {
@@ -41,17 +64,33 @@ struct Menu: View {
                                 Text(dish.category ?? "")
                             }
                         } label: {
-                            HStack {
-                                Text("\(dish.title ?? "") $\(dish.price ?? "")")
-                                if let urlString = dish.image {
-                                    AsyncImage(url: URL(string: urlString)) { image in
-                                        image.resizable()
-                                    } placeholder: {
-                                        ProgressView()
+                            VStack(alignment: .leading) {
+                                Divider()
+                                Text("\(dish.title ?? "")")
+                                    .foregroundStyle(Color.primary)
+                                    .bold()
+                                HStack {
+                                    VStack(alignment: .leading, spacing: 10) {
+                                        Text("\(dish.descriptionDish ?? "")\n")
+                                            .multilineTextAlignment(.leading)
+                                            .lineLimit(2)
+                                            .foregroundStyle(Color.secondary)
+                                        Text("$\(dish.price ?? "")")
+                                            .foregroundStyle(Color.secondary)
+                                            .bold()
                                     }
-                                    .frame(width: 50, height: 50)
+                                    Spacer()
+                                    if let urlString = dish.image {
+                                        AsyncImage(url: URL(string: urlString)) { image in
+                                            image.resizable()
+                                        } placeholder: {
+                                            ProgressView()
+                                        }
+                                        .frame(width: 80, height: 80)
+                                    }
                                 }
                             }
+                            .padding([.horizontal, .top])
                         }
                     }
                 }

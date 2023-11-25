@@ -10,24 +10,36 @@ import SwiftUI
 struct UserProfile: View {
     @Environment(\.presentationMode) var presentation
     
-    let firstName = UserDefaults.standard.string(forKey: kFirstName)
-    let lastName = UserDefaults.standard.string(forKey: kLastName)
-    let email = UserDefaults.standard.string(forKey: kEmail)
+    @State private var firstName = UserDefaults.standard.string(forKey: kFirstName)
+    @State private var lastName = UserDefaults.standard.string(forKey: kLastName)
+    @State private var email = UserDefaults.standard.string(forKey: kEmail)
     
     var body: some View {
         VStack {
-            Text("Personal information")
-            Image("profile-image-placeholder")
-                .resizable()
-                .frame(width: 50, height: 50)
-            Text(firstName ?? "")
-            Text(lastName ?? "")
-            Text(email ?? "")
-            Button("Logout") {
-                UserDefaults.standard.set(false, forKey: kIsLoggedIn)
-                self.presentation.wrappedValue.dismiss()
+            TopBar(isConnected: true)
+            VStack(alignment: .leading) {
+                Text("Personal information")
+                Image("profile")
+                    .resizable()
+                    .frame(width: 50, height: 50)
+                ZStack {
+                    Text(firstName ?? "")
+                }
+                .frame(maxWidth: .infinity)
+                .frame(height: 50)
+                .border(Color.black)
+                
+        
+                    
+                Text(lastName ?? "")
+                Text(email ?? "")
+                Button("Logout") {
+                    UserDefaults.standard.set(false, forKey: kIsLoggedIn)
+                    self.presentation.wrappedValue.dismiss()
+                }
+                Spacer()
             }
-            Spacer()
+            .padding()
         }
     }
 }

@@ -21,15 +21,18 @@ struct Onboarding: View {
     var body: some View {
         NavigationView {
             VStack {
+                TopBar(isConnected: false)
+                HeroSection()
                 NavigationLink(isActive: $isLoggedIn) {
                     Home()
                 } label: {
                     EmptyView()
                 }
-                TextField("First Name", text: $firstName)
-                TextField("Last Name", text: $lastName)
-                TextField("Email", text: $email)
-                Button("Register") {
+                OutlinedTextField(label: "First Name *", input: $firstName)
+                OutlinedTextField(label: "Last Name *", input: $lastName)
+                OutlinedTextField(label: "Email *", input: $email)
+                    .padding(.bottom)
+                Button {
                     if !firstName.isEmpty && !lastName.isEmpty && !email.isEmpty {
                         UserDefaults.standard.set(firstName, forKey: kFirstName)
                         UserDefaults.standard.set(lastName, forKey: kLastName)
@@ -39,7 +42,15 @@ struct Onboarding: View {
                     } else {
                         
                     }
+                } label: {
+                    Text("Register")
+                        .foregroundStyle(blackLL)
+                        .frame(width: 150, height: 50)
+                        .background(.yellowLL)
+                        .clipShape(RoundedRectangle(cornerRadius: 25.0))
+                        
                 }
+                Spacer()
             }
             .onAppear {
                 if UserDefaults.standard.bool(forKey: kIsLoggedIn) {
