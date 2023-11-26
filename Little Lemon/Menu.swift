@@ -12,6 +12,11 @@ struct Menu: View {
     @State private var searchText = ""
     @State private var displaySearchBar = false
     
+    @State private var startedEnabled = true
+    @State private var mainsEnabled = true
+    @State private var dessertsEnabled = true
+    @State private var drinksEnabled = true
+    
     var body: some View {
         VStack {
             TopBar(isConnected: true)
@@ -39,6 +44,27 @@ struct Menu: View {
                 }
             }
             .background(greenLL)
+            
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 20) {
+                    MenuTypeButton(label: "Starters", isSeleted: startedEnabled) {
+                        startedEnabled.toggle()
+                    }
+                    
+                    MenuTypeButton(label: "Mains", isSeleted: mainsEnabled) {
+                        mainsEnabled.toggle()
+                    }
+                    
+                    MenuTypeButton(label: "Desserts", isSeleted: dessertsEnabled) {
+                        dessertsEnabled.toggle()
+                    }
+                    
+                    MenuTypeButton(label: "Drinks", isSeleted: drinksEnabled) {
+                        drinksEnabled.toggle()
+                    }
+                }
+                .padding(.horizontal)
+            }
    
             FetchedObjects(predicate: buildPredicate(), sortDescriptors: buildSortDescriptors()) { (dishes: [Dish]) in
                 ScrollView {
@@ -136,8 +162,19 @@ struct Menu: View {
     }
     
     private func buildPredicate() -> NSPredicate {
-        return searchText.isEmpty ? NSPredicate(value: true):
+        let firstPredicate = searchText.isEmpty ? NSPredicate(value: true):
         NSPredicate(format: "title CONTAINS[cd] %@", searchText)
+        
+        
+        let starters = startedEnabled ? NSPredicate(format: "category == %@", "starters") : NSPredicate(value: false)
+        
+        let mains = mainsEnabled ? NSPredicate(format: "category == %@", "mains") : NSPredicate(value: false)
+        
+        let dessert = dessertsEnabled ? NSPredicate(format: "category == %@", "desserts") : NSPredicate(value: false)
+        
+        let drinks = drinksEnabled ? NSPredicate(format: "category == %@", "drinks") : NSPredicate(value: false)
+        
+        return NSCompoundPredicate(type: .and, subpredicates: [firstPredicate, NSCompoundPredicate(type: .or, subpredicates: [starters, mains, dessert, drinks])])
     }
 }
 
